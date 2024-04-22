@@ -178,10 +178,6 @@ const App = () => {
         localStorage.setItem('saved', JSON.stringify(saved))
     }, [saved]);
 
-    const log = (e) => {
-        console.log(e)
-    }
-
     return (
         <>
             <Toaster position={'top-right'} expand={true} richColors={true} duration={1500} gap={16}/>
@@ -268,7 +264,7 @@ const App = () => {
                             previous?.map((e, i) => (
                                 <button key={i} className={'p-6 bg-white border-2 border-white'}
                                         style={{backgroundImage: `${backgroundColor(e.colorCombination, e.direction, e.color1, e.color2, e.color3)}`}}
-                                        onClick={() => log(e)}>
+                                        onClick={() => setSavedCombination(e)}>
                                 </button>
                             ))
                         }
